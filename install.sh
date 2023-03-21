@@ -2,6 +2,7 @@
 
 PNG_URL="https://txt.osk.sh/branding/tetrio-color.png"
 TAR_URL="https://tetr.io/about/desktop/builds/TETR.IO%20Setup.tar.gz"
+DESKTOP_FILE_URL="https://raw.githubusercontent.com/Sebbito/TETR.IO-installer/main/tetrio.desktop"
 DESKTOP_ENTRY_PATH="$HOME/.local/share/applications/"
 LOCAL_PATH="$HOME/.local/"
 
@@ -31,6 +32,7 @@ wget $PNG_URL
 mv "tetrio-color.png" $ICON_PATH
 
 # Copy the desktop file
+wget "$DESKTOP_FILE_URL"
 cp ./tetrio.desktop $DESKTOP_ENTRY_PATH
 ENTRY="$DESKTOP_ENTRY_PATH""tetrio.desktop"
 EXECUTABLE_LOCATION="$FILE_LOCATION""tetrio-desktop"
