@@ -12,25 +12,27 @@ if [ $# == 0 ]; then
     help
     exit 1
 else
-    TETRIO_PATH=$1
+    TETRIO_PATH="$1"
 fi
-
-echo $TETRIO_PATH
 
 # test to see if path is valid
 
-# extract files and grab the extracted directory name
-dir_name=`tar -vxf "$TETRIO_PATH" | head -n 1`
+if ! [ -e "$TETRIO_PATH" ]; then
+    echo "File not found."
+    exit 1
+fi
 
+# extract files and grab the extracted directory name
+tar -vxf "$TETRIO_PATH"
+dir_name=$(find . -name "tetrio-desktop*" -type d)
+dir_name=${dir_name:2}
 # extract version number of tetrio
 # 15 is for the strings of "tetrio-desktop"
 # -1 cuts of the "/" from the directory
-VERSION=${dir_name:15: -1}
-
+VERSION=${dir_name:15}
 ### move files to destination
-
-mv $dir_name "$BIN_PATH"
-EXEC_PATH="$BIN_PATH$dir_name"
+mv "$dir_name" "$BIN_PATH"
+EXEC_PATH="$BIN_PATH$dir_name/"
 
 ###### Desktop integration
 
@@ -39,7 +41,7 @@ ICON_PATH="$EXEC_PATH""tetrio-color.png"
 curl --create-dirs --output $ICON_PATH $PNG_URL
 
 cp ./tetrio.desktop $DESKTOP_ENTRY_PATH
-ENTRY="$DESKTOP_ENTRY_PATH/tetrio.desktop"
+ENTRY="$DESKTOP_ENTRY_PATH""tetrio.desktop"
 EXEC_PATH="$EXEC_PATH""tetrio-desktop"
 
 # set attributes
