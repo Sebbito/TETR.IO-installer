@@ -42,3 +42,6 @@ sed -i "s+ICON_PATH+$ICON_PATH+g" $ENTRY
 
 # update desktop entries
 update-desktop-database ~/.local/share/applications
+
+# remove the tarball
+rm "TETR.IO Setup.tar.gz"
