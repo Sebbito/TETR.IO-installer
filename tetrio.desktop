@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=VERSION
+Type=Application
+Name=TETR.IO
+GenericName=Stacker
+Comment=TETR.IO is a free-to-win modern yet familiar online stacker
+TryExec=EXEC_PATH
+Exec=EXEC_PATH
+Icon=ICON_PATH
+Categories=Game;
