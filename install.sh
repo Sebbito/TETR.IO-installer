@@ -33,7 +33,7 @@ mv "tetrio-color.png" $ICON_PATH
 
 # Copy the desktop file
 wget "$DESKTOP_FILE_URL"
-cp ./tetrio.desktop $DESKTOP_ENTRY_PATH
+mv ./tetrio.desktop $DESKTOP_ENTRY_PATH
 ENTRY="$DESKTOP_ENTRY_PATH""tetrio.desktop"
 EXECUTABLE_LOCATION="$FILE_LOCATION""tetrio-desktop"
 
