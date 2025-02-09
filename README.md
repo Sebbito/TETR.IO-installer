@@ -5,8 +5,7 @@ This script downloads and installs the TETR.IO tarball on your **Linux** system 
 # Usage
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Sebbito/TETR.IO-installe
-r/main/install.sh | bash
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Sebbito/TETR.IO-installer/main/install.sh | bash
 ```
 
 # Disclaimer
