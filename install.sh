@@ -5,7 +5,7 @@
 # Sadly the old 'latest' version path doesn't work anymore so versions will be
 # hardcoded. I don't want to bother with webscraping for now.
 
-# These variables may break any time since they rely on osk
+# These variables may break any time since they rely on external factors
 
 PNG_URL="https://txt.osk.sh/branding/tetrio-color.png"
 TAR_NAME="TETR.IO%20Setup.tar.gz"
